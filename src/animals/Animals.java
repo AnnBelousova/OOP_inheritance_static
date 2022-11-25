@@ -1,17 +1,11 @@
 package animals;
 
-public class Animals {
+public abstract class Animals {
     private final String name;
     private int age;
-    public void eat(){
-
-    };
-    public void sleep(){
-
-    };
-    public void move(){
-
-    };
+    public abstract void eat();
+    public abstract void move();
+    public void sleep(){}
 
     public String getName() {
         return name;

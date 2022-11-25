@@ -22,6 +22,8 @@ public class Amphibian extends Animals{
     public void eat() {
         System.out.println("Amphibian are eating insects.");
     }
+
+
     @Override
     public void move() {
         System.out.println("Amphibian can move under water and on the ground.");
