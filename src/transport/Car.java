@@ -1,3 +1,4 @@
+/*
 package transport;
 
 import java.time.LocalDate;
@@ -95,7 +96,8 @@ public class Car extends Transport {
     }
 
 
-    /*    public void changeTires(Boolean summerTires) {
+    */
+/*    public void changeTires(Boolean summerTires) {
             if ((LocalDate.now().getMonthValue() < 5 || LocalDate.now().getMonthValue() > 10) && !summerTires) {
                 System.out.println("Tires is Ok for current season!");
             } else if ((LocalDate.now().getMonthValue() < 5 || LocalDate.now().getMonthValue() > 10) && summerTires) {
@@ -105,7 +107,8 @@ public class Car extends Transport {
             } else if ((LocalDate.now().getMonthValue() >= 5 || LocalDate.now().getMonthValue() <= 10) && !summerTires) {
                 System.out.println("You have to change tires to winter tires!");
             }
-        }*/
+        }*//*
+
     public void changeTires() {
         isSummerTires = !isSummerTires;
     }
@@ -221,3 +224,4 @@ public class Car extends Transport {
         isSummerTires = summerTires == null ? isSummerTires : !isSummerTires;
     }
 }
+*/

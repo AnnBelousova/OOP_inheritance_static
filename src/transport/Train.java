@@ -1,3 +1,4 @@
+/*
 package transport;
 
 
@@ -72,3 +73,4 @@ public class Train extends Transport{
                 ", number of wagons " + numberOfWagons;
     }
 }
+*/

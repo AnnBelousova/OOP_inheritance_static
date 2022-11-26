@@ -4,7 +4,31 @@ import java.time.LocalDate;
 
 public class TestTransport {
     public static void main(String[] args) {
-        Car.Key remoteWithoutKey = new Car.Key(true, false);
+        PassengerCars bmw = new PassengerCars("BMW", "X6",3.5);
+        Truck man = new Truck("MAN", "33430", 18);
+        Bus setra = new Bus("SETRA", "121", 16);
+
+
+        System.out.println(bmw);
+        bmw.beginMoving();
+        System.out.println(man);
+        man.beginMoving();
+        man.stopMoving();
+        System.out.println(setra);
+        setra.beginMoving();
+
+        DriverCategoryD<Bus> sergio = new DriverCategoryD("Sergio");
+        sergio.printInfo(sergio, setra);
+
+        DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik");
+        nik.printInfo(nik, bmw);
+
+        DriverCategoryC<Truck> peter = new DriverCategoryC("Peter");
+        peter.printInfo(peter, man);
+
+
+
+        /*Car.Key remoteWithoutKey = new Car.Key(true, false);
         Car.Key remoteWithKey = new Car.Key(true, true);
 
         Car lada = new Car("Lada", "Granta", 1.7, "yellow", 2015, "Russia",5,null, "x456sa777", "automate", "sedan", new Car.Key(), 150);
@@ -56,6 +80,6 @@ public class TestTransport {
         System.out.println(internationalBus);
         cityBus.refill();
         System.out.println(intercity);
-        cityBus.refill();
+        cityBus.refill();*/
     }
 }
