@@ -32,8 +32,7 @@ public class Bus extends Transport implements Competitive{
         return 100;
     }
 
-
-    //    @Override
+//    @Override
 //    public void refill() {
 //        System.out.println("Need to refill petrol/diesel");
 //    }

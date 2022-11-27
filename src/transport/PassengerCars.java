@@ -31,4 +31,5 @@ public class PassengerCars extends Transport implements Competitive{
         System.out.print("The max speed of passenger car is ");
         return 210;
     }
+
 }
