@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class TestTransport {
     public static void main(String[] args) {
-        PassengerCars bmw = new PassengerCars("BMW", "X6",3.5);
-        Truck man = new Truck("MAN", "33430", 18);
-        Bus setra = new Bus("SETRA", "121", 16);
+        PassengerCars bmw = new PassengerCars("BMW", "X6",3.5, PassengerCars.TypeOfBodyCar.HATCHBACK);
+        Truck man = new Truck("MAN", "33430", 18, Truck.TypeOfBodyTruck.N2);
+        Bus setra = new Bus("SETRA", "121", 16, Bus.TypeOfBodyBus.BIG);
 
 
         System.out.println(bmw);
@@ -16,15 +16,22 @@ public class TestTransport {
         man.stopMoving();
         System.out.println(setra);
         setra.beginMoving();
+        System.out.println();
 
         DriverCategoryD<Bus> sergio = new DriverCategoryD("Sergio");
         sergio.printInfo(sergio, setra);
+        setra.printType();
+        System.out.println();
 
         DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik");
         nik.printInfo(nik, bmw);
+        bmw.printType();
+        System.out.println();
 
         DriverCategoryC<Truck> peter = new DriverCategoryC("Peter");
         peter.printInfo(peter, man);
+        man.printType();
+
 
 
 

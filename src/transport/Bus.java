@@ -1,8 +1,55 @@
 package transport;
 
 public class Bus extends Transport implements Competitive{
-    public Bus(String brand, String model, double engineVolume) {
+    public enum TypeOfBodyBus {
+        VERY_SMALL(0,10),
+        SMALL(10,25),
+        MEDIUM(40, 50),
+        BIG(60,80),
+        HUGE(100,200);
+        private Integer capacityMin;
+        private Integer capacityMax;
+
+        TypeOfBodyBus(int capacityMin, int capacityMax) {
+            this.capacityMin = capacityMin;
+            this.capacityMax = capacityMax;
+        }
+
+
+        @Override
+            public String toString() {
+                if (capacityMin == null){
+                    return "Capacity: " +
+                            "to upper bound: " + capacityMax + " people";
+                } else if (capacityMax == null) {
+                    return "Capacity: " +
+                            "from lower bound: " + capacityMin + " people";
+                }
+                return "Capacity: " +
+                        "lower bound: " + capacityMin+ " people" +
+                        ", upper bound: " + capacityMax + " people";
+            }
+
+    }
+
+    private TypeOfBodyBus typeOfBodyBus;
+
+    public TypeOfBodyBus getTypeOfBodyBus() {
+        return typeOfBodyBus;
+    }
+
+    @Override
+    public void printType() {
+        if(typeOfBodyBus == null){
+            System.out.println("Information is not enough ");
+        }else {
+            System.out.println(getTypeOfBodyBus());
+        }
+    }
+
+    public Bus(String brand, String model, double engineVolume, TypeOfBodyBus typeOfBodyBus) {
         super(brand, model, engineVolume);
+        this.typeOfBodyBus = typeOfBodyBus;
     }
 
     @Override
