@@ -37,6 +37,7 @@ public abstract class Transport {
         return  "Brand: " + brand +
                 ", model: " + model;
     }
+    public abstract void printType();
 
     @Override
     public boolean equals(Object o) {
