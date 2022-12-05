@@ -58,6 +58,15 @@ public class Truck extends Transport implements Competitive {
     }
 
     @Override
+    public void passDiagnostics(Driver driver) {
+        if (driver.getHasDriverLicence() == null || !driver.getHasDriverLicence()){
+            throw new RuntimeException("Diagnostic is not passed.");
+        }else {
+            System.out.println("Diagnostic is passed.");
+        }
+    }
+
+    @Override
     public void stopMoving() {
         System.out.println("Track stopped.");
     }

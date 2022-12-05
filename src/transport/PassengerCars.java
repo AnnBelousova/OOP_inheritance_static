@@ -39,10 +39,19 @@ public class PassengerCars extends Transport implements Competitive {
 
     @Override
     public void printType() {
-        if(typeOfBodyCar == null){
+        if (typeOfBodyCar == null) {
             System.out.println("Information is not enough ");
-        }else {
+        } else {
             System.out.println(typeOfBodyCar);
+        }
+    }
+
+    @Override
+    public void passDiagnostics(Driver driver) {
+        if (driver.getHasDriverLicence() == null || !driver.getHasDriverLicence()){
+            throw new RuntimeException("Diagnostic is not passed.");
+        }else {
+            System.out.println("Diagnostic is passed.");
         }
     }
 

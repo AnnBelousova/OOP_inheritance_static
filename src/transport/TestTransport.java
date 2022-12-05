@@ -23,14 +23,17 @@ public class TestTransport {
         setra.printType();
         System.out.println();
 
-        DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik");
+        DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik", true);
         nik.printInfo(nik, bmw);
         bmw.printType();
+        bmw.passDiagnostics(nik);
         System.out.println();
 
-        DriverCategoryC<Truck> peter = new DriverCategoryC("Peter");
+        DriverCategoryC<Truck> peter = new DriverCategoryC("Peter", false);
         peter.printInfo(peter, man);
+        man.passDiagnostics(peter);
         man.printType();
+
 
 
 

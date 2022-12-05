@@ -3,8 +3,8 @@ package transport;
 public class DriverCategoryC<T extends Truck> extends Driver {
 
 
-    public DriverCategoryC(String fullName) {
-        super(fullName);
+    public DriverCategoryC(String fullName, Boolean getHasDriverLicence) {
+        super(fullName, getHasDriverLicence);
     }
 
     public void printInfo(Driver driver, Truck truck){
