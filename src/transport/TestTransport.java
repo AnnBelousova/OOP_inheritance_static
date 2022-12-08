@@ -1,6 +1,9 @@
 package transport;
 
-import java.time.LocalDate;
+import market.MarketCash;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestTransport {
     public static void main(String[] args) {
@@ -23,14 +26,44 @@ public class TestTransport {
         setra.printType();
         System.out.println();
 
-        DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik");
+        DriverCategoryB<PassengerCars> nik = new DriverCategoryB("Nik", true);
         nik.printInfo(nik, bmw);
         bmw.printType();
+        bmw.passDiagnostics(nik);
         System.out.println();
 
-        DriverCategoryC<Truck> peter = new DriverCategoryC("Peter");
+        DriverCategoryC<Truck> peter = new DriverCategoryC("Peter", true);
         peter.printInfo(peter, man);
+        man.passDiagnostics(peter);
         man.printType();
+
+        List<Sponsor> sponsors = new ArrayList<>();
+        Sponsor abc = new Sponsor("ABC", 4500);
+        Sponsor dim = new Sponsor("DIM", 8000);
+        sponsors.add(abc);
+        sponsors.add(dim);
+
+        List<Transport> transportList = new ArrayList<>();
+        transportList.add(bmw);
+        transportList.add(setra);
+        transportList.add(man);
+
+        Mechanic andrey = new Mechanic("Andrey Petrov", "Repair", Mechanic.TypeAutoToServe.CAR_MECHANIC);
+        Mechanic igor = new Mechanic("Igor Ivanov", "Mill", Mechanic.TypeAutoToServe.UNIQUE_MECHANIC);
+        andrey.doTransportService();
+        andrey.repairTransport();
+        igor.doTransportService();
+
+
+        List<Mechanic> mechanics = new ArrayList<>();
+        mechanics.add(andrey);
+        mechanics.add(igor);
+
+        ServiceStation<Transport> serviceStation = new ServiceStation<>();
+        serviceStation.addTransport(bmw);
+        //serviceStation.addTransport(setra);
+        serviceStation.addTransport(man);
+        serviceStation.serve();
 
 
 

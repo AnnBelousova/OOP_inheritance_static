@@ -31,6 +31,11 @@ public abstract class  Driver {
     public abstract void stop();
     public abstract void fillAuto();
 
+    public Driver(String fullName, Boolean hasDriverLicence) {
+        this.fullName = fullName;
+        this.hasDriverLicence = hasDriverLicence;
+    }
+
     public Driver(String fullName) {
         this.fullName = fullName;
     }

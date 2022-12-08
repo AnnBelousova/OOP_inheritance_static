@@ -38,6 +38,7 @@ public abstract class Transport {
                 ", model: " + model;
     }
     public abstract void printType();
+    public void passDiagnostics(Driver driver){};
 
     @Override
     public boolean equals(Object o) {
@@ -51,6 +52,7 @@ public abstract class Transport {
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume);
     }
+
 
     //    public int getProductionYear() {
 //        return productionYear;
